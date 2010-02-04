@@ -1,6 +1,8 @@
-# Spree Order Comments
+# Spree Comments
 
-An extension for Spree to allow comments on the Order Admin view
+An extension for Spree to allow commenting on different models via the admin ui, currently supports: Orders & Shipments.
+
+This is really a fork / rename of jderrett/spree-order-comments
 
 Requirements:
 
@@ -9,3 +11,5 @@ Requirements:
 Notes:
 
 * Comment model and migration included.  You do NOT need to follow the acts\_as\_commentable instructions for script/generate comment
+
+
