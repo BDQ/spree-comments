@@ -1,0 +1,36 @@
+<h1><%= "#{t("comments")} #{(t('for') + " " + comments_for unless (comments_for rescue nil).nil?)}"%></h1>
+
+<table class="index">
+  <tr>
+    <th style="width:140px;"><%= "#{t('spree.date')}/#{t('spree.time')}" %></th>
+    <th><%= t("comment") %></th>
+    <th></th>
+  </tr>
+  <% commentable.comments.reverse.each_with_index do |comment, index| %>
+    <tr id="<%= dom_id(comment) %>">
+      <td><%= comment.created_at.to_formatted_s(:long) %></td>
+      <td>
+        <div id="order-comment-header-<%= index %>" class="order-comment-header">
+          <strong><%= comment.user.email%> said:</strong>
+        </div>
+        <div id="order-comment-body-<%= index %>" class="order-comment-body">
+          <%= comment.comment %>
+        </div>
+      </td>
+     </tr>
+  <% end %>
+</table>
+
+
+<h4><%= t('add_comment') %></h4>
+<div class="order-add-comment">
+  <% form_tag(comments_path) do %>
+    <%= hidden_field_tag 'comment[commentable_id]', commentable.id %>
+    <%= hidden_field_tag 'comment[commentable_type]', commentable.class %>
+    <%= hidden_field_tag 'comment[user_id]', current_user.id %>
+    <%= text_area_tag 'comment[comment]', nil, :style => 'width:100%; height:100px;' %>
+    <p class="form-buttons">
+      <%= button t('add_comment') %>
+    </p>
+  <% end %>
+</div>
