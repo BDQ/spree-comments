@@ -21,6 +21,14 @@ class CommentsExtension < Spree::Extension
     Admin::OrdersController.class_eval do
       def comments
         load_object
+        @comment_types = CommentType.find(:all, :conditions => {:applies_to => "Order"} )
+      end
+    end
+
+    Admin::ShipmentsController.class_eval do
+      def comments
+        load_object
+        @comment_types = CommentType.find(:all, :conditions => {:applies_to => "Shipment"} )
       end
     end
 
