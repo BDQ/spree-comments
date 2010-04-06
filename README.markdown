@@ -2,6 +2,8 @@
 
 An extension for Spree to allow commenting on different models via the admin ui, currently supports: Orders & Shipments.
 
+Also supports optional comment Types which can be defined per comment-able object (i.e. Order, Shipment, etc) via the admin Configuration tab.
+
 This is really a fork / rename of jderrett/spree-order-comments
 
 Requirements:

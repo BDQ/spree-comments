@@ -38,12 +38,14 @@
         <th colspan="2"><%= t('add_comment') %></th>
       </thead>
       <tbody>
+         <% unless @comment_types.empty? %>
+          <tr>
+            <td><%= f.label :comment_type_id, t("type") %><br /></td>
+            <td><%= f.select :comment_type_id, @comment_types.map{|ct| [ct.name, ct.id]},{} ,:class => 'title' %></td>
+          </tr>
+        <% end %>
         <tr>
-          <td style="width:140px;"><%= f.label :comment_type_id, t("type") %><br /></td>
-          <td><%= f.select :comment_type_id, @comment_types.map{|ct| [ct.name, ct.id]},{} ,:class => 'title' %></td>
-        </tr>
-        <tr>
-          <td><%= f.label :comment, t("comment") %></td>
+          <td style="width:140px;"><%= f.label :comment, t("comment") %></td>
           <td><%= f.text_area :comment,  {:style => 'height:150px;', :class => 'fullwidth'} %></td>
         </tr>
         <tr>
