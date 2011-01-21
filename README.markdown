@@ -1,17 +1,5 @@
-# Spree Comments
+# Spree Comments has been moved.
 
-An extension for Spree to allow commenting on different models via the admin ui, currently supports: Orders & Shipments.
+The official repo is now located here:
 
-Also supports optional comment Types which can be defined per comment-able object (i.e. Order, Shipment, etc) via the admin Configuration tab.
-
-This is really a fork / rename of jderrett/spree-order-comments
-
-Requirements:
-
-* [acts\_as\_commentable](http://github.com/jackdempsey/acts_as_commentable) installed
-
-Notes:
-
-* Comment model and migration included.  You do NOT need to follow the acts\_as\_commentable instructions for script/generate comment
-
-
+https://github.com/spree/spree_comments 
